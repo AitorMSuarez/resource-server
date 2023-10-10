@@ -14,7 +14,7 @@ import com.ams.resourceserver.dto.MessageDto;
 public class ResourceController {
 
 	@GetMapping("/user")
-	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN','OIDC_USER')")
+	@PreAuthorize("hasAnyAuthority('ROLE_USER','OIDC_USER')")
 	public ResponseEntity<MessageDto> user(Authentication authentication) {
 		return ResponseEntity.ok(new MessageDto("Hello " + authentication.getName()));
 	}
